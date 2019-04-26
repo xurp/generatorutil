@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
 	}
 	@Override
 	public void insert(UserCopy userCopy) {
-		
+		userMapper.insert(userCopy);
 		
 	}
 

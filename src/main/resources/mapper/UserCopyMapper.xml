@@ -19,8 +19,8 @@
     delete from user_copy
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.generatorutil.model.UserCopy">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+  <insert id="insert" parameterType="com.example.generatorutil.model.UserCopy"><!-- useGeneratedKeys="true" keyProperty="id" 用于另一种mysql insert自增主键-->
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer"><!-- keyProperty是返回给插入实体，见mutiSelect -->
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into user_copy (username, password)
